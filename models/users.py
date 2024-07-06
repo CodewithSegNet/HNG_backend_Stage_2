@@ -8,31 +8,49 @@ def validate_fields(data):
     """
     A helper function that validates user fields based on data dictionary.
     """
-    errors = {}
+    errors = []
 
     # Validate userId
     if 'userId' not in data or not data['userId'] or len(data['userId']) > 255:
-        errors['userId'] = "User ID must be provided and less than 255 characters."
+        errors.append({
+            "field": "userId",
+            "message": "User ID must be provided and less than 255 characters."
+        })
 
     # Validate firstName
     if 'firstName' not in data or not data['firstName'] or len(data['firstName']) > 255 or not data['firstName'].isalpha():
-        errors['firstName'] = "First name must be provided, less than 255 characters, and contain only alphabetic characters."
+        errors.append({
+            "field": "firstName",
+            "message": "First name must be provided, less than 255 characters, and contain only alphabetic characters."
+        })
 
     # Validate lastName
     if 'lastName' not in data or not data['lastName'] or len(data['lastName']) > 255 or not data['lastName'].isalpha():
-        errors['lastName'] = "Last name must be provided, less than 255 characters, and contain only alphabetic characters."
+        errors.append({
+            "field": "lastName",
+            "message": "Last name must be provided, less than 255 characters, and contain only alphabetic characters."
+        })
 
     # Validate email format
     if 'email' not in data or not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', data['email']):
-        errors['email'] = "Invalid email format."
+        errors.append({
+            "field": "email",
+            "message": "Invalid email format."
+        })
 
     # Validate password length
     if 'password' not in data or not data['password'] or len(data['password']) < 5:
-        errors['password'] = "Password must be at least 5 characters long."
+        errors.append({
+            "field": "password",
+            "message": "Password must be at least 5 characters long."
+        })
 
     # Validate phone number format (adjust regex according to your requirements)
     if 'phone' not in data or not re.match(r'^\+?[0-9]+$', data['phone']):
-        errors['phone'] = "Invalid phone number format."
+        errors.append({
+            "field": "phone",
+            "message": "Invalid phone number format."
+        })
 
     return errors
 

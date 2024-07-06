@@ -3,5 +3,4 @@ Flask-SQLAlchemy
 Flask-Migrate
 alembic==1.7.6
 psycopg2-binary
-psycopg2-binary
-requests
+PyJWT

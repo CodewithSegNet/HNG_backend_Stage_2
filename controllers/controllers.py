@@ -1,6 +1,8 @@
 from flask import jsonify, request, Blueprint
 from controllers import db, User
 from models.users import validate_fields
+import jwt
+from datetime import datetime, timedelta
 import json
 
 
@@ -42,3 +44,23 @@ def registration():
 
 @bp.route('/login', methods=['POST'])
 def login():
+    """
+    login route for registered user 
+    """
+    try:
+        email=request.json.get('email')
+        password=request.json.get('password')
+
+        user = User.query.filter_by(email=email).first()
+        if user and user.check_password(password):
+            " create a jwt token "
+            token = jwt.encode({
+                'id' : user.email,
+                'exp' : datetime.utcnow() + timedelta(hours=2) # Token expiration Time
+            }, 'secret_key', algorithm='HS256')
+
+            return jsonify({'token': token}), 200
+        else:
+            return jsonify({'error': "Invalid credentials"}), 401
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
