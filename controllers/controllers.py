@@ -1,5 +1,5 @@
 from flask import jsonify, request, Blueprint
-from . import db, User
+from controllers import db, User
 from models.users import validate_fields
 import json
 
@@ -37,3 +37,8 @@ def registration():
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
+
+
+
+@bp.route('/login', methods=['POST'])
+def login():
