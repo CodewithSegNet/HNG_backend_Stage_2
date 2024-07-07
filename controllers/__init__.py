@@ -1,2 +1,3 @@
 from app import db
-from models.users import User
+from models import User, Organisation
+

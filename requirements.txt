@@ -4,3 +4,4 @@ Flask-Migrate
 alembic==1.7.6
 psycopg2-binary
 PyJWT
+flask-jwt-extended

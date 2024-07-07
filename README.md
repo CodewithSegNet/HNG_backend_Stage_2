@@ -87,11 +87,11 @@ Successful response: Return the payload below with a `201` success status code
     "data": {
       "accessToken": "eyJh...",
       "user": {
-	      "userId": "string",
-	      "firstName": "string",
-		  "lastName": "string",
-		  "email": "string",
-		  "phone": "string",
+        "userId": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "phone": "string",
       }
     }
 }
@@ -130,11 +130,11 @@ Successful response: Return the payload below with a `200` success status code
     "data": {
       "accessToken": "eyJh...",
       "user": {
-	      "userId": "string",
-	      "firstName": "string",
-		  "lastName": "string",
-		  "email": "string",
-		  "phone": "string",
+          "userId": "string",
+          "firstName": "string",
+          "lastName": "string",
+          "email": "string",
+          "phone": "string",
       }
     }
 }
@@ -158,14 +158,14 @@ Successful response: Return the payload below with a `200` success status code
 
 ```
 {
-	"status": "success",
-    "message": "<message>",
+  "status": "success",
+  "message": "<message>",
     "data": {
-      "userId": "string",
-      "firstName": "string",
-	  "lastName": "string",
-	  "email": "string",
-	  "phone": "string"
+          "userId": "string",
+          "firstName": "string",
+          "lastName": "string",
+          "email": "string",
+          "phone": "string"
     }
 }
 
@@ -178,14 +178,14 @@ Successful response: Return the payload below with a `200` success status code
 ```
 {
     "status": "success",
-	"message": "<message>",
+    "message": "<message>",
     "data": {
       "organisations": [
-	      {
-		      "orgId": "string",
-			  "name": "string",
-			  "description": "string",
-	      }
+      {
+        "orgId": "string",
+        "name": "string",
+        "description": "string",
+      }
       ]
     }
 }
@@ -199,12 +199,12 @@ Successful response: Return the payload below with a `200` success status code
 ```
 {
     "status": "success",
-	"message": "<message>",
+    "message": "<message>",
     "data": {
-			"orgId": "string", // Unique
-	 		"name": "string", // Required and cannot be null
-			"description": "string",
-	}
+          "orgId": "string", // Unique
+          "name": "string", // Required and cannot be null
+          "description": "string",
+  }
 }
 
 ```
@@ -228,9 +228,9 @@ Successful response: Return the payload below with a `201` success status code
     "status": "success",
     "message": "Organisation created successfully",
     "data": {
-	      "orgId": "string",
-		  "name": "string",
-		  "description": "string"
+            "orgId": "string",
+            "name": "string",
+            "description": "string"
     }
 }
 
