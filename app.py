@@ -2,13 +2,15 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity, create_access_token
+import pymysql
 
 
 
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:segun@localhost/testuser'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a.oregon-postgres.render.com/hng_n202'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a.oregon-postgres.render.com/hng_n202'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a/hng_n202'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)

@@ -6,5 +6,7 @@ psycopg2-binary
 PyJWT
 flask-jwt-extended
 pytest
-JWTManager
+pymysql
+gunicorn
+
 
