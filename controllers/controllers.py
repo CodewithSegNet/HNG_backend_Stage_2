@@ -312,5 +312,5 @@ def add_user_to_organisation(orgId):
     else:
         return jsonify({
             "status": "success",
-            "message": "User is already part of the organisation"
+            "message": "User added to organisation successfully"
         }), 200
