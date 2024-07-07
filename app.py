@@ -9,8 +9,8 @@ import pymysql
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:segun@localhost/testuser'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a.oregon-postgres.render.com/hng_n202'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a/hng_n202'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a.oregon-postgres.render.com/hng_n202'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://segun:WsC7u7CyilYxSR7R5pToOpNctCE5MOf9@dpg-cq5a63mehbks73blrrlg-a/hng_n202'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
