@@ -1,6 +1,7 @@
 from flask import current_app, jsonify, request, Blueprint, abort
 from controllers import db, User, Organisation
 from models.users import validate_fields
+from sqlalchemy.exc import IntegrityError
 from app import JWTManager, jwt_required, get_jwt_identity, create_access_token
 import jwt
 from datetime import datetime, timedelta
@@ -75,6 +76,12 @@ def registration():
                 }
             }
         }), 201
+        
+    except IntegrityError as e:
+        logging.error(f"IntegrityError during registration: {str(e)}")
+        db.session.rollback()
+        return jsonify({"status": "fail", "message": "Email already exists", "statusCode": 400}), 422
+
     except Exception as e:
         logging.error(f"Registration failed: {str(e)}")
         db.session.rollback()
